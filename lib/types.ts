@@ -135,6 +135,8 @@ export type FinalResponse = {
   nextActions: string[];
 };
 
+export type IntentHypothesis = { id: string; text: string; confidence: number; evidence: string[] };
+
 export type ConversationTurn = {
   id: string;
   user: string;
@@ -148,4 +150,5 @@ export type ConversationTurn = {
   recommendation: RecommendationResponse | null;
   finalResponse: FinalResponse;
   previousRankings: RankedProduct[];
+  hiddenIntentHypotheses: IntentHypothesis[];
 };

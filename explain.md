@@ -10,4 +10,4 @@
 
 중앙 패널은 **Understanding → State Manager → Policy → Query Generator → Browsing → Recommendation Engine → Response Composer** 흐름을 표시합니다. 정보가 부족한 경우 Query Generator 이후 단계 대신 Response Composer가 Policy 결정을 자연어 질문으로 바꿉니다.
 
-우측 패널에서는 5 facets, evidence origin, State Diff, 검색 질의, 모호성 근거, 제품별 Score Breakdown, 실제 top-k review evidence, 이전/현재 순위를 확인합니다. 모든 수치와 상품 데이터는 mock입니다.
+우측 패널은 현재 이해한 사용자 요구, 숨은 의도 가설, 다음 행동과 판단 근거, State Diff 순서로 읽습니다. 숨은 의도는 명시적 조건을 확정 사실로 바꾸지 않고, 근거와 confidence를 가진 가설로 보여줍니다. 중앙 패널은 여섯 단계 중 현재 판단 단계만 강조합니다. 모든 수치와 상품 데이터는 mock입니다.

@@ -33,6 +33,12 @@ export function updateDialogueState(previous: DialogueState, rawInput: string, r
     if (!state.category || state.category.valueText !== value.valueText) changed.push("category");
     state.category = value;
   }
+  if (parsed.firstTimeBuyer) {
+    const buyer = preference("first-time-buyer", "첫 태블릿 구매", turnId);
+    if (state.subjectiveNeeds.goal_audience?.valueText !== buyer.valueText) changed.push("subjectiveNeeds.goal_audience");
+    state.subjectiveNeeds.goal_audience = buyer;
+    state.softConstraints = { ...state.softConstraints, buyerExperience: buyer };
+  }
   if (parsed.budget) state.hardConstraints = upsert(state.hardConstraints, "budget", preference("budget", `${parsed.budget.toLocaleString("ko-KR")}원 이하`, turnId), changed.map((key) => `hardConstraints.${key}`) as string[]);
   if (parsed.noteTaking) {
     const note = preference("activity-note-taking", "필기와 노트 작성", turnId);
