@@ -25,7 +25,7 @@ npm run build
 
 | 영역 | 데모에서 보여주는 것 |
 | --- | --- |
-| 왼쪽: User conversation | 현재 상태에 맞춘 추천 발화와 자유 입력. 상세 보기·거절·비교·구매 행동도 다음 추천에 반영됩니다. |
+| 왼쪽: User conversation | 전송 버튼 하나로 현재 단계에 맞는 다음 데모 발화를 진행합니다. 상세 보기·거절·구매 행동도 다음 추천에 반영됩니다. |
 | 가운데: Live decision trace | 여섯 단계 중 현재 실행 단계와 SPN Policy의 실제 판단 근거, 선택한 질문 또는 추천 판단을 강조합니다. |
 | 오른쪽: User insight | 현재 이해한 요구, 숨은 의도 가설, 다음 행동과 이유, State Diff, 리뷰 근거와 상품 점수를 표시합니다. |
 
@@ -74,7 +74,7 @@ SPN은 에메랄드 계열로, RA-Rec은 블루 계열로 표시합니다.
 
 - `app/page.tsx`: React 상태와 3패널 UI 조립
 - `lib/types.ts`: 상태, 리뷰 근거, 랭킹, 숨은 의도 가설 타입
-- `lib/mock/*`: 자유 입력 규칙과 동의어
+- `lib/mock/*`: 단계별 demo 발화 규칙과 동의어
 - `lib/spn/*`: SPN 추출, 모호성, Policy, browsing, 응답 구성, 의도 가설
 - `lib/rarec/*`: State Manager, 질의 생성, 리뷰·상품 랭킹, 추천 설명
 - `data/products.json`, `data/reviews.json`: 로컬 mock 카탈로그와 정규화된 리뷰
