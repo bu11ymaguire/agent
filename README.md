@@ -4,6 +4,19 @@
 
 실제 LLM, 쇼핑 API, 크롤러, 결제, 서버 데이터베이스는 사용하지 않습니다. 모든 처리는 브라우저에서 실행되는 로컬 mock 데이터와 결정론적 TypeScript 함수로 재현됩니다.
 
+## 배포된 데모
+
+Vercel 프로덕션 배포: [https://agent-iota-five.vercel.app/](https://agent-iota-five.vercel.app/)
+
+별도의 API 키나 서버 환경 변수 없이 동작하는 프론트엔드 데모입니다. GitHub `main` 브랜치에 변경 사항을 push하면 Vercel이 자동으로 새 배포를 만듭니다.
+
+## 의존성
+
+- Node.js LTS와 npm이 필요합니다.
+- 런타임은 Next.js 15와 React 19를 사용합니다.
+- 개발·검증 도구로 TypeScript, ESLint, Tailwind CSS를 사용합니다.
+- 정확한 패키지 버전은 [`package-lock.json`](./package-lock.json)으로 고정되어 있으며, 설치에는 `npm ci`를 사용합니다.
+
 ## 실행
 
 ```powershell
