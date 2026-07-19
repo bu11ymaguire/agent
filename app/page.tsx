@@ -27,7 +27,7 @@ function nextDemoUtterance(state: DialogueState, turn: ConversationTurn | null) 
   if (!turn) return "태블릿을 처음 사는데 뭘 보고 골라야 할지 모르겠어요. 20만 원 이하였으면 좋겠어요.";
   if (turn.policy.action === "ask_user") return "주로 학교에서 필기할 것 같아요.";
   if (!state.rejectedItems.length) return "첫 번째 제품은 저장 공간이 너무 작아요.";
-  if (!state.inspectedItems.length) return "첫 번째 제품을 자세히 볼게요.";
+  if (!state.inspectedItems.length) return "그럼 추천해주신 TECLAST T40을 자세히 볼게요.";
   if (!state.purchasedItems.length) return "이 제품으로 살게요.";
   return null;
 }

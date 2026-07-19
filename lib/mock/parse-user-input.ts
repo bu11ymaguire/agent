@@ -17,7 +17,7 @@ export function parseUserInput(input: string): ParsedInput {
   const valuesReviewCount = /후기|리뷰/.test(normalized) && /많|수|믿음|신뢰/.test(normalized);
   let action: ParsedInput["action"];
   if (/첫\s*(번째|제품)|1번/.test(normalized) && /저장|용량|작/.test(normalized)) action = "reject_first_storage";
-  else if (/첫\s*(번째|제품)|1번/.test(normalized) && /자세히|상세|볼게/.test(normalized)) action = "inspect_first";
+  else if (/(첫\s*(번째|제품)|1번|teclast|t40|이\s*제품|추천한\s*제품)/i.test(normalized) && /자세히|상세|볼게/.test(normalized)) action = "inspect_first";
   else if (/첫\s*번째.*두\s*번째|1번.*2번/.test(normalized) && /비교/.test(normalized)) action = "compare_first_second";
   else if (/이 제품|이걸|이것|첫\s*번째/.test(normalized) && /살게|구매|결제/.test(normalized)) action = "purchase_current";
 
