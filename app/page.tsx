@@ -89,7 +89,7 @@ export default function Home() {
     const browseResult = query ? browseMockCatalog(query, stateWithUnresolved, products, reviews) : null;
     const recommendation = browseResult ? createRecommendationResponse(stateWithUnresolved, browseResult.products, browseResult.reviews) : null;
     const nextState = recommendation ? { ...stateWithUnresolved, recommendedItems: recommendation.rankedProducts.map((ranking) => ranking.productId) } : stateWithUnresolved;
-    const finalResponse = composeFinalResponse(policy, recommendation ? { ...recommendation, updatedDialogueState: nextState } : null, browseResult, products);
+    const finalResponse = composeFinalResponse(policy, recommendation ? { ...recommendation, updatedDialogueState: nextState } : null, browseResult, products, updated.parsed.action);
     const hiddenIntentHypotheses = deriveHiddenIntentHypotheses(nextState);
     const turn: ConversationTurn = { id: turnId, user: text, assistant: finalResponse.message, state: nextState, diff: updated.diff, snapshot, policy, query, browseResult, recommendation, finalResponse, previousRankings, hiddenIntentHypotheses };
     setState(nextState); setTurns((items) => [...items, turn]);
